@@ -1,4 +1,5 @@
 from kafka import KafkaConsumer
+from nlp.processor import process_message
 import json
 
 consumer = KafkaConsumer(
@@ -10,4 +11,8 @@ consumer = KafkaConsumer(
 )
 
 for message in consumer:
-    print(f"⏺️ Topic: {message.topic} | Data: {message.value['title'] if 'title' in message.value else message.value['text']}")
+    msg = message.value
+    print(f"Topic: {message.topic}")
+    
+    processed = process_message(msg)
+    print("→", processed["sentiment"], "|", processed["entities"])
