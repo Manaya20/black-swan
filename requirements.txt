@@ -6,3 +6,9 @@ scikit-learn
 numpy
 scipy
 joblib
+streamlit
+transformers
+sentence-transformers
+spacy
+nltk
+torch
