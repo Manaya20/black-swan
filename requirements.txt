@@ -2,3 +2,7 @@ kafka-python
 feedparser
 tweepy
 python-dotenv
+scikit-learn
+numpy
+scipy
+joblib
